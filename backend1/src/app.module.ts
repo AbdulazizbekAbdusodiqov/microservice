@@ -4,6 +4,8 @@ import { FlowersModule } from "./flowers/flowers.module";
 import { Flower } from "./flowers/entities/flower.entity";
 import { CustomersModule } from "./customers/customers.module";
 import { Customer } from "./customers/entities/customer.entity";
+import { ShopsModule } from './shops/shops.module';
+import { Shop } from "./shops/entities/shop.entity";
 
 @Module({
   imports: [
@@ -12,13 +14,14 @@ import { Customer } from "./customers/entities/customer.entity";
       host: "localhost",
       port: 3306,
       username: "root",
-      password: "Ahror_2004",
+      password: "P@ssw0rd123!",
       database: "microservice",
-      entities: [Flower, Customer],
+      entities: [Flower, Customer, Shop],
       synchronize: true,
     }),
     FlowersModule,
     CustomersModule,
+    ShopsModule,
   ],
   controllers: [],
   providers: [],

@@ -29,6 +29,18 @@ async function bootstrap() {
       },
     },
   });
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.RMQ,
+    options: {
+      urls: [
+        "amqps://cjlwprvs:sklF36Gyn0a-Y14mVN80ixlJkzc1yPSM@cow.rmq2.cloudamqp.com/cjlwprvs",
+      ],
+      queue: "shops_queue",
+      queueOptions: {
+        durable: false,
+      },
+    },
+  });
 
   await app.startAllMicroservices();
 
